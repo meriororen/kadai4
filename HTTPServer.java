@@ -2,24 +2,24 @@ import java.io.*;
 import java.net.*;
 
 /**
- * ŠÈ’P‚ÈWebƒT[ƒo.
+ * ç°¡å˜ãªWebã‚µãƒ¼ãƒ.
  */
 public class HTTPServer
 {
     /**
-     * ƒT[ƒoƒ\ƒPƒbƒg
+     * ã‚µãƒ¼ãƒã‚½ã‚±ãƒƒãƒˆ
      */
     private ServerSocket server;
 
     /**
-     * WebƒTƒCƒg‚ÌƒgƒbƒvƒfƒBƒŒƒNƒgƒŠ
+     * Webã‚µã‚¤ãƒˆã®ãƒˆãƒƒãƒ—ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
      */
     private String docRoot;
 
     /**
-     * ƒT[ƒo[ƒ\ƒPƒbƒg‚ğì¬‚·‚éB
-     * @param port ‚±‚ÌƒT[ƒo‚ªó‚¯•t‚¯‚éƒ|[ƒg”Ô†
-     * @param docRoot WebƒTƒCƒg‚ÌƒgƒbƒvƒfƒBƒŒƒNƒgƒŠ
+     * ã‚µãƒ¼ãƒãƒ¼ã‚½ã‚±ãƒƒãƒˆã‚’ä½œæˆã™ã‚‹ã€‚
+     * @param port ã“ã®ã‚µãƒ¼ãƒãŒå—ã‘ä»˜ã‘ã‚‹ãƒãƒ¼ãƒˆç•ªå·
+     * @param docRoot Webã‚µã‚¤ãƒˆã®ãƒˆãƒƒãƒ—ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
      */
     private HTTPServer(int port, String docRoot) throws java.io.IOException {
         server = new ServerSocket(port);
@@ -27,7 +27,7 @@ public class HTTPServer
     }
 
     /**
-     *  ƒT[ƒo‚ÌƒT[ƒrƒX‚ğs‚¤ƒƒ\ƒbƒh.
+     *  ã‚µãƒ¼ãƒã®ã‚µãƒ¼ãƒ“ã‚¹ã‚’è¡Œã†ãƒ¡ã‚½ãƒƒãƒ‰.
      */
     private void doService() {
         System.out.println("Starting Server Service!!");
@@ -40,16 +40,16 @@ public class HTTPServer
                 //clientHandler.doService();
             }
             catch (Exception e) {
-                // ƒXƒ^ƒbƒNƒgƒŒ[ƒX‚Ì•\¦
+                // ã‚¹ã‚¿ãƒƒã‚¯ãƒˆãƒ¬ãƒ¼ã‚¹ã®è¡¨ç¤º
                 e.printStackTrace();
             }
         }
     }
 	
     /**
-     *  ƒT[ƒo‹N“®‚Ì‚½‚ß‚Ì mainƒƒ\ƒbƒh.
+     *  ã‚µãƒ¼ãƒèµ·å‹•ã®ãŸã‚ã® mainãƒ¡ã‚½ãƒƒãƒ‰.
      *  <pre>
-     *  % java HTTPServer ƒ|[ƒg”Ô†
+     *  % java HTTPServer ãƒãƒ¼ãƒˆç•ªå·
      *  </pre>
      */
     public static void main(String[] args) {
@@ -60,14 +60,14 @@ public class HTTPServer
 
         int port = -1;
         try {
-            port = Integer.parseInt(args[0]); // •¶š—ñ‚ğ®”‚Ö•ÏŠ·
+            port = Integer.parseInt(args[0]); // æ–‡å­—åˆ—ã‚’æ•´æ•°ã¸å¤‰æ›
         }
         catch (Exception e) {
             System.err.println("Invalid port number.");
             System.exit(1);
         }
 
-        // WebƒTƒCƒg‚ÌƒgƒbƒvƒfƒBƒŒƒNƒgƒŠ(ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚Ìdocroot)‚ğ‹‚ß‚é.
+        // Webã‚µã‚¤ãƒˆã®ãƒˆãƒƒãƒ—ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª(ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®docroot)ã‚’æ±‚ã‚ã‚‹.
         String docRoot = System.getProperty("user.dir") + File.separator + "docroot";
 
         try {
@@ -75,7 +75,7 @@ public class HTTPServer
             server.doService();
         }
         catch (Exception e) {
-            // ƒXƒ^ƒbƒNƒgƒŒ[ƒX‚Ì•\¦
+            // ã‚¹ã‚¿ãƒƒã‚¯ãƒˆãƒ¬ãƒ¼ã‚¹ã®è¡¨ç¤º
             e.printStackTrace();
         }
     }
